@@ -1,2 +1,24 @@
 # for-the-programmer
-A website that allow programmers to quickly look up concepts regarding syntax, functions and implementations within specific languages such as (HTML, CSS, JavaScript, etc))
+
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

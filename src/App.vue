@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <navigation></navigation>
+    <img src="@/assets/svg/background-blob.svg" alt="Background Blob" class="bg-blob-vector">
     <div id="content">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <!-- content -->
       <router-view/>
     </div>
   </div>
@@ -22,16 +22,22 @@ export default {
   @import "../node_modules/uikit/src/less/uikit.less";
 </style>
 
-<style>
+<style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
-
 #content {
-  padding: 30px;
+  min-height: 100%;
+  z-index: 10;
+}
+.bg-blob-vector {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1;
+    transform: scale(1.2);
 }
 </style>

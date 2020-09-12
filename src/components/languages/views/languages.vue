@@ -2,9 +2,10 @@
   <div id="languages">
     <div class="uk-child-width-1-5@m" uk-grid uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 500; repeat: true">
     <div v-for="(item, index) in languages" :key="item.id" :data-index="index">
-        <div class="uk-card-small uk-card-default uk-card-body uk-card-hover">
+        <div v-on:click="selectLanguage(item)" class="uk-card-small uk-card-default uk-card-body uk-card-hover language-card">
             <h3 class="uk-card-title">{{item.name}}</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <img :src="getImageUrl(item.value)" alt="" class="language-icon">
+            <p>{{item.about}}</p>
         </div>
     </div>
     </div>
@@ -18,18 +19,48 @@ export default {
     return {
       languages: [{
         id: 1,
-        name: 'CSS'
+        name: 'CSS',
+        value: 'css',
+        about: 'Cascading Style Sheets',
       },{
         id: 2,
-        name: 'HTML'
+        name: 'HTML',
+        value: 'html',
+        about: 'Cascading Style Sheets',
       },{
         id: 3,
-        name: 'JavaScript'
+        name: 'JavaScript',
+        value: 'javascript',
+        about: 'Cascading Style Sheets',
+      },
+      {
+        id: 4,
+        name: 'Python',
+        value: 'python',
+        about: 'Cascading Style Sheets',
+      },
+      {
+        id: 5,
+        name: 'C#',
+        value: 'csharp',
+        about: 'Cascading Style Sheets',
+      },
+      {
+        id: 6,
+        name: 'C',
+        value: 'c',
+        about: 'Cascading Style Sheets',
       }]
     }
   },
   methods: {
-
+    getImageUrl(value) {
+      var url = require.context('@/assets/svg/', false, /\.svg$/)
+      return url('./' + value + ".svg")
+    },
+    selectLanguage(selectedLanguage) {
+      console.log(selectedLanguage)
+    }
   },
   mounted() {
 
@@ -42,5 +73,11 @@ export default {
   padding: 20px;
   position: relative;
   z-index: inherit;
+}
+.language-card {
+  cursor: pointer;
+}
+.language-icon {
+  z-index: 1;
 }
 </style>

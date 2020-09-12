@@ -5,7 +5,12 @@ import Vue from 'vue'
 
 // UI Kits and styling
 import UIkit from 'uikit'
-import Icons from "uikit/dist/js/uikit-icons";
+import Icons from "uikit/dist/js/uikit-icons"
+
+// Shared Components
+import CodeSnippet from '@/components/shared/code-snippet'
+
+Vue.component('code-snippet', CodeSnippet)
 
 Vue.config.productionTip = false
 

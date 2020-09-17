@@ -1,13 +1,26 @@
 <template>
   <div id="languages">
-    <div class="uk-child-width-1-5@m" uk-grid uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 500; repeat: true">
-    <div v-for="(item, index) in languages" :key="item.id" :data-index="index">
-        <div v-on:click="selectLanguage(item)" class="uk-card-small uk-card-default uk-card-body uk-card-hover language-card">
-            <h3 class="uk-card-title">{{item.name}}</h3>
-            <img :src="getImageUrl(item.value)" alt="" class="language-icon">
-            <p>{{item.about}}</p>
+    <div
+      class="uk-child-width-1-5@m"
+      uk-grid
+      uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 500; repeat: true">
+      <div
+        v-for="(item, index) in languages"
+        :key="item.id"
+        :data-index="index">
+        <div
+          class="uk-card-small uk-card-default uk-card-body uk-card-hover language-card"
+          @click="selectLanguage(item)">
+          <h3 class="uk-card-title">
+            {{ item.name }}
+          </h3>
+          <img
+            :src="getImageUrl(item.value)"
+            alt=""
+            class="language-icon">
+          <p>{{ item.about }}</p>
         </div>
-    </div>
+      </div>
     </div>
   </div>
 </template>
@@ -53,6 +66,9 @@ export default {
       }]
     }
   },
+  mounted() {
+
+  },
   methods: {
     getImageUrl(value) {
       var url = require.context('@/assets/svg/', false, /\.svg$/)
@@ -61,9 +77,6 @@ export default {
     selectLanguage(selectedLanguage) {
       console.log(selectedLanguage)
     }
-  },
-  mounted() {
-
   },
 }
 </script>

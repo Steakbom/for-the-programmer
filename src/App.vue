@@ -1,10 +1,13 @@
 <template>
   <div id="app">
-    <navigation></navigation>
-    <img src="@/assets/svg/background-blob.svg" alt="Background Blob" class="bg-blob-vector">
+    <navigation />
+    <img
+      src="@/assets/svg/background-blob.svg"
+      alt="Background Blob"
+      class="bg-blob-vector">
     <div id="content">
       <!-- content -->
-      <router-view/>
+      <router-view />
     </div>
   </div>
 </template>

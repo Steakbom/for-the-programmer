@@ -2,7 +2,7 @@
   <div id="code-snippet">
     <pre>
       <code style="border-radius: 1px">
-        {{code}}
+        {{ code }}
       </code>
     </pre>
   </div>

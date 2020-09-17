@@ -28,5 +28,11 @@ Vue.mixin({
     return {
       user: {},
     }
+  },
+  methods: {
+    getImageUrl(value) {
+      var url = require.context('@/assets/svg/', false, /\.svg$/)
+      return url('./' + value + ".svg")
+    },
   }
 })

@@ -3,7 +3,7 @@
     <nav
       class="navigation-bar uk-navbar-container"
       uk-navbar>
-      <div class="uk-navbar-left">
+      <div class="uk-dark uk-navbar-left">
         <ul class="uk-navbar-nav">
           <li>
             <router-link
@@ -136,8 +136,12 @@ export default {
       }]
     }
   },
-  methods: {
-  },
+    methods: {
+    getImageUrl(value) {
+      var url = require.context('@/assets/svg/', false, /\.svg$/)
+      return url('./' + value + ".svg")
+    },
+  }
 }
 </script>
 

@@ -7,13 +7,13 @@
         <ul class="uk-navbar-nav -uk-dark">
           <li>
             <router-link
-              :to="{name: 'Home'}">
+              :to="{name: 'home'}">
               <div>Home</div>
             </router-link>
           </li>
           <li>
             <router-link
-              :to="{name: 'Languages'}">
+              :to="{name: 'languages'}">
               <div>Languages</div>
             </router-link>
             <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2">
@@ -85,7 +85,13 @@
           </li>
           <li>
             <router-link
-              :to="{name: 'About'}">
+              :to="{name: 'converters'}">
+              <div>Converters</div>
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              :to="{name: 'about'}">
               <div>About</div>
             </router-link>
           </li>
@@ -99,49 +105,49 @@
 export default {
   name: 'Navigation',
     data() {
-    return {
-      languages: [{
-        id: 1,
-        name: 'CSS',
-        value: 'css',
-        about: 'Cascading Style Sheets',
-      },{
-        id: 2,
-        name: 'HTML',
-        value: 'html',
-        about: 'Hyper Text Markup Language',
-      },{
-        id: 3,
-        name: 'JavaScript',
-        value: 'javascript',
-        about: 'JavaScript',
-      },
-      {
-        id: 4,
-        name: 'Python',
-        value: 'python',
-        about: 'Python',
-      },
-      {
-        id: 5,
-        name: 'C#',
-        value: 'csharp',
-        about: 'C Sharp',
-      },
-      {
-        id: 6,
-        name: 'C',
-        value: 'c',
-        about: 'C',
-      }]
+      return {
+        languages: [{
+          id: 1,
+          name: 'CSS',
+          value: 'css',
+          about: 'Cascading Style Sheets',
+        },{
+          id: 2,
+          name: 'HTML',
+          value: 'html',
+          about: 'Hyper Text Markup Language',
+        },{
+          id: 3,
+          name: 'JavaScript',
+          value: 'javascript',
+          about: 'JavaScript',
+        },
+        {
+          id: 4,
+          name: 'Python',
+          value: 'python',
+          about: 'Python',
+        },
+        {
+          id: 5,
+          name: 'C#',
+          value: 'csharp',
+          about: 'C Sharp',
+        },
+        {
+          id: 6,
+          name: 'C',
+          value: 'c',
+          about: 'C',
+        }]
     }
   },
-    methods: {
+  methods: {
     getImageUrl(value) {
-      var url = require.context('@/assets/svg/', false, /\.svg$/)
+      var url = require.context('@/assets/svg/languages/', false, /\.svg$/)
       return url('./' + value + ".svg")
     },
-  }
+  },
 }
 </script>
 

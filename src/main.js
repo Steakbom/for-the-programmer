@@ -7,6 +7,11 @@ import Vue from 'vue'
 import UIkit from 'uikit'
 import Icons from "uikit/dist/js/uikit-icons"
 
+// Languages Components
+import PageTemplate from '@/components/languages/controls/page-template'
+
+Vue.component('page-template', PageTemplate)
+
 // Shared Components
 import CodeSnippet from '@/components/shared/code-snippet'
 
@@ -31,7 +36,7 @@ Vue.mixin({
   },
   methods: {
     getImageUrl(value) {
-      var url = require.context('@/assets/svg/', false, /\.svg$/)
+      var url = require.context('@/assets/svg/languages/', false, /\.svg$/)
       return url('./' + value + ".svg")
     },
   }

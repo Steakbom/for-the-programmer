@@ -12,7 +12,10 @@
           class="uk-card-small uk-card-default uk-card-body uk-card-hover language-card"
           @click="selectLanguage(item)">
           <h3 class="uk-card-title">
-            {{ item.name }}
+            <router-link
+              :to="{name: item.name}">
+              <div>{{ item.name }}</div>
+            </router-link>
           </h3>
           <img
             :src="getImageUrl(item.value)"
@@ -60,9 +63,9 @@ export default {
       },
       {
         id: 6,
-        name: 'C',
-        value: 'c',
-        about: 'Cascading Style Sheets',
+        name: 'Sql',
+        value: 'sql',
+        about: 'Structured Query Language',
       }]
     }
   },
@@ -75,7 +78,8 @@ export default {
       return url('./' + value + ".svg")
     },
     selectLanguage(selectedLanguage) {
-      console.log(selectedLanguage)
+      // this.router.push({ name : selectedLanguage})
+      // console.log(selectedLanguage)
     }
   },
 }

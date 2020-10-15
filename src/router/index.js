@@ -12,7 +12,8 @@ Vue.use(VueRouter)
       /* webpackChunkName: "home" */ '@/components/public/views/home.vue'
     )
     },
-    meta: {
+      meta: {
+      allowAnonymous: true,
       title: 'Home'
     }
     },
@@ -25,7 +26,21 @@ Vue.use(VueRouter)
         )
       },
       meta: {
+        allowAnonymous: true,
         title: 'Languages'
+      }
+    },
+        {
+      path: '/sql',
+      name: 'Sql',
+      component: () => {
+        return import(
+        /* webpackChunkName: "sql" */ '@/components/languages/views/sql.vue'
+        )
+      },
+      meta: {
+        allowAnonymous: true,
+        title: 'SQL'
       }
     },
     {
@@ -37,6 +52,7 @@ Vue.use(VueRouter)
         )
       },
       meta: {
+        allowAnonymous: true,
         title: 'About'
       }
     },

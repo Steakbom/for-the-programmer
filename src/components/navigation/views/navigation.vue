@@ -1,10 +1,10 @@
 <template>
   <div id="navigation">
     <nav
-      class="navigation-bar uk-navbar-container"
+      class="navigation-bar uk-navbar-container uk-dark"
       uk-navbar>
-      <div class="uk-dark uk-navbar-left">
-        <ul class="uk-navbar-nav">
+      <div class="uk-dark uk-navbar-left uk-dark">
+        <ul class="uk-navbar-nav -uk-dark">
           <li>
             <router-link
               :to="{name: 'Home'}">
